@@ -1,40 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{html,js}"],
+  content: ["./index.html"],
   theme: {
     extend: {
       colors: {
-        tomato: "#ff6257",
-        orange: "#FF693A",
-        pink: "#FF537A",
-        grey: "#9294a0",
-        "darkslate-grey": "#242742",
-        "charcoal-grey": "#36384e",
+        "pale-navy": "#37394E",
+        "dark-navy": "#242742",
+        "light-gray": "#19182a40",
+        "orange": "#ff6257",
       },
-
       fontFamily: {
-        rotobo: ["Roboto", "sans-serif"],
+        roboto: ["Robot", "sans-serif"],
       },
-
-      backgroundImage: {
-        "hero-mobile": "url('/illustration-sign-up-mobile.svg')",
-        "hero-desktop": "url('/illustration-sign-up-desktop.svg')",
-        "icon-list": "url('/icon-list.svg')",
-        "icon-success": "url('/icon-success.svg')",
+      fontSize: {
+        xl: "clamp(40px, 5cqw, 56px)",
+        base:"clamp(15px, 5cqw, 16px)",
       },
-
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-      },
-
-      animation: {
-        fadeIn: "fadeIn 1s ease",
-      },
+      boxShadow: {
+        "3xl": "0 20px 40px -15px #ff6257",
+      }
     },
   },
-  plugins: [],
+  plugins: ['tailwindcss'],
 }
-

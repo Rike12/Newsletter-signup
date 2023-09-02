@@ -14,103 +14,68 @@
     <link rel="stylesheet" href="./src/default.css">
     <title>Newsletter SignUp Form</title>
 </head>
-<body>
-    <main  class="min-h-screen w-screen flex font-rotobo text-charcoal-grey bg-charcoal-grey md:items-center md:justify-center"
-    >
-    <section id="signUp"
-    class="w-full flex flex-col items-center bg-white animate-fadeIn md:w-[768px] md:h-auto md:p-3 md:grid md:grid-cols-2 md:gap-2 md:justify-center md:rounded-[40px] md:shadow-2xl md:shadow-darkslate-grey lg:w-[80%] lg:h-[600px] lg:pl-10 lg:py-6 xl:w-[900px]"
-  >
-  <div
-          class="h-64 w-full bg-hero-mobile bg-cover bg-bottom bg-no-repeat md:h-full md:w-[95%] md:order-2 md:bg-hero-desktop md:bg-contain md:bg-center xl:bg-right"
-          aria-hidden="true"
-        ></div>
-        <div class="w-full mt-4 py-4 px-7 space-y-5 md:p-8">
-            <h1 class="font-bold text-4xl text-darkslate-grey lg:text-5xl">
-              Stay updated!
-            </h1>
-            <p>Join 60,000+ product managers receiving monthly updates on:</p>
-            <ul class="list-none space-y-4">
-              <li class="ps-8 bg-icon-list bg-no-repeat" aria-hidden="true">
-                Product discovery and building what matters
-              </li>
-              <li class="ps-8 bg-icon-list bg-no-repeat" aria-hidden="true">
-                Measuring to ensure updates are a success
-              </li>
-              <li class="ps-8 bg-icon-list bg-no-repeat" aria-hidden="true">
-                And much more!
-              </li>
-            </ul>
-
-            <form name="subscribeForm" action="" class="space-y-4" novalidate>
-                <div class="grid grid-cols-2 grid-rows-2">
-                  <label
-                    class="mt-6 mb-2 font-bold text-xs text-darkslate-grey"
-                    for="email"
-                    >Email address</label
-                  >
-                  <input
-                    class="w-full col-span-2 order-3 border border-grey rounded-lg px-5 py-3 outline-none transition disabled:cursor-not-allowed disabled:text-grey enabled:hover:border-darkslate-grey enabled:hover:invalid:border-tomato invalid:bg-tomato/20 invalid:text-tomato invalid:border-tomato focus:border-darkslate-grey focus:invalid:border-tomato peer"
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="email@company.com"
-                  />
-                  <span
-                    class="mt-6 mb-2 font-bold text-xs text-end text-tomato invisible peer-invalid:visible"
-                    >Valid email requited</span
-                  >
-                </div>
-                <button
-                  disabled
-                  type="submit"
-                  name="btnSubmit"
-                  class="w-full flex flex-row justify-around items-center rounded-lg bg-darkslate-grey px-4 py-3 font-bold text-white disabled:bg-darkslate-grey/80 disabled:cursor-not-allowed enabled:hover:bg-gradient-to-r enabled:hover:from-pink enabled:hover:to-orange enabled:hover:shadow-lg enabled:hover:shadow-tomato/50 enabled:focus:outline enabled:focus:outline-offset-2 enabled:focus:outline-2 enabled:focus:outline-darkslate-grey"
-                >
-                  <span>Subscribe to monthly newsletter</span>
-                  <img
-                    src="./src/images/icon-spin (1).svg"
-                    class="animate-spin hidden"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                </button>
-              </form>
-            </div>
-          </section>
-          <!-- Sign-up form end -->
+<body  class=" bg-pale-navy flex items-center justify-center min-h-screen font-roboto bg-pale-navy">
+    <!-- Sign-up form start -->
+  
     
-          <!-- Success message start -->
-          <section
-            id="success"
-            class="hidden w-full flex-col items-center justify-between bg-white px-7 pt-[50%] pb-8 md:max-w-md md:rounded-[40px] md:p-12 md:space-y-8 md:shadow-2xl md:shadow-darkslate-grey animate-fadeIn"
-          >
-            <div>
-              <div
-                class="h-16 w-full bg-icon-success bg-contain bg-no-repeat mb-8 md:h-14 animate-bounce"
-                aria-hidden="true"
-              ></div>
-              <h2 class="text-4xl font-bold text-darkslate-grey lg:text-5xl">
-                Thanks for subscribing!
-              </h2>
-              <p class="mt-4">
-                A confirmation email has been sent to
-                <strong id="confirmation-email">example@example.com</strong>. Please
-                open it and click the button inside to confirm your subscription.
-              </p>
-            </div>
+    <main
+      class="email-card flex flex-col-reverse md:flex-row justify-between w-full max-w-[930px] md:max-h-[645px] bg-white rounded-[35px] md:px-6 md:py-6 gap-5">
+      <div class="px-6 pb-12 md:px-10 md:py-16 md:w-full">
+        <h2 class="text-xl font-bold mb-2">Stay updated!</h2>
+        <p class="text-base mb-6">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="flex flex-col gap-[10px] mb-10">
+          <li class="flex items-center gap-4">
+            <img src="./src/images/icon-success (1).svg" alt="" width="20" height="20" class="w-5" aria-hidden="true" />
+            <span class="text-base">Product discovery and building what matters
+            </span>
+          </li>
+          <li class="flex items-center gap-4">
+            <img src="./src/images/icon-success (1).svg" alt="" width="20" height="20" class="w-5" aria-hidden="true" />
+            <span class="text-base">Measuring to ensure updates are a success
+            </span>
+          </li>
+          <li class="flex items-center gap-4">
+            <img src="./src/images/icon-success (1).svg" alt="" width="20" height="20" class="w-5" aria-hidden="true" />
+            <span class="text-base">And much more!</span>
+          </li>
+        </ul>
+        <form action="" class="flex flex-col items-start">
+          <div class="flex justify-between w-full text-xs mb-3">
+            <label for="email">Email address </label>
+            <span class="span-advice text-orange hidden">Valid email required</span>
+          </div>
+          <input type="text" id="email" placeholder="email@company.com"
+            class="email-input border-[1px] border-light-gray rounded-lg w-full px-5 py-4 mb-5" />
+          <input type="submit" value="Subscribe to monthly newsletter" class="btn" />
+        </form>
+      </div>
     
-            <a
-              href="/"
-              class="w-full rounded-lg bg-darkslate-grey px-4 py-3 font-bold text-white text-center hover:bg-gradient-to-r hover:from-pink hover:to-orange hover:shadow-lg hover:shadow-tomato/50 focus:outline focus:outline-offset-2 focus:outline-2 focus:outline-darkslate-grey"
-            >
-              Dismiss message
-            </a>
-    
-
-    </section>
-
+      <picture class="w-full md:w-[96%]">
+        <source srcset="./assets/images/illustration-sign-up-desktop (1).svg" media="(min-width: 768px)" />
+        <img src="./src/images/illustration-sign-up-mobile (1).svg" alt="sign-up image" width="346" height="597"
+          class="w-full h-full object-cover rounded-2xl" />
+      </picture>
     </main>
-
+    
+    <div class="hidden email-success-card bg-white rounded-[35px] max-w-[504px] py-8 px-8 lg:py-12 lg:px-16">
+      <img src="./assets/images/icon-success.svg" alt="" aria-hidden="true" width="64" height="64" class="mb-8" />
+      <h3 class="text-xl font-bold mb-7 leading-[58px]">
+        Thanks for subscribing!
+      </h3>
+      <p class="mb-8">
+        A confirmation email has been sent to
+        <span class="email-success-info font-bold"></span> Please open it and
+        click the button
+      </p>
+      <button class="dismiss-button bg-dark-navy  text-white border-[1px] border-light-gray rounded-lg w-full px-5 py-4 mb-5">Dismiss message</button>
+    </div>
+    
+    
+    <!-- Success message end -->
+    
+  
     <script src="./src/script.js"></script>
 </body>
 </html>
