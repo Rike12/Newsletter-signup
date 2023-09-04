@@ -1,37 +1,47 @@
-const signUp = document.querySelector("#signUp")
-const success = document.querySelector("#success")
-const confirmationEmail = document.querySelector("#confirmation-email")
-const form = document.forms.subscribeForm
-const { email, btnSubmit } = form
+"use strict";
 
-email.addEventListener("keyup", validateEmail)
+// Elements
+const signUpCardEl = document.querySelector(".sign-up-card");
+const successCardEl = document.querySelector(".success-card");
+const signUpFormEl = document.querySelector(".sign-up-form");
+const emailIn = document.getElementById("email");
+const submitBtn = document.querySelector(".submit-btn");
+const dismissBtn = document.querySelector(".dismiss-btn");
+const submittedEmailEl = document.querySelector(".submitted-email");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault()
-  if (validateEmail) {
-    email.disabled = true
-    btnSubmit.disabled = true
-    btnSubmit.lastElementChild.classList.toggle("hidden")
+// Event-listeners
+submitBtn.addEventListener("click", submitEmail);
+dismissBtn.addEventListener("click", toggleCards);
 
-    signUp.classList.add("hidden")
-    signUp.classList.remove("flex", "md:grid")
+// Functions
+// toggle cards
+function toggleCards() {
+  signUpCardEl.classList.toggle("hidden");
+  successCardEl.classList.toggle("hidden");
+}
 
-    confirmationEmail.innerText = email.value
-    success.classList.add("flex")
-    success.classList.remove("hidden")
+// email validation
+function validateEmail(email) {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+}
+
+// submit email form
+function submitEmail(e) {
+  e.preventDefault();
+
+  // valid email
+  if (validateEmail(emailIn.value)) {
+    submittedEmailEl.innerText = emailIn.value;
+    toggleCards();
+    emailIn.value = "";
+    signUpFormEl.classList.remove("error");
   }
-})
-
-const emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
-
-function validateEmail() {
-  if (!emailRegex.test(email.value)) {
-    email.setCustomValidity("Required input")
-    btnSubmit.disabled = true
-    return false
-  } else {
-    email.setCustomValidity("")
-    btnSubmit.disabled = false
-    return true
+  // invalid email
+  else {
+    signUpFormEl.classList.add("error");
   }
 }
