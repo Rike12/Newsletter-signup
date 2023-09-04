@@ -223,26 +223,7 @@ footer {
   gap: 1rem;
 }
 
-.attribution {
-  font-size: 1.1rem;
-}
 
-.attribution a:link,
-.attribution a:visited {
-  color: var(--white);
-  padding: 0.1rem;
-  text-decoration: none;
-}
-
-.attribution a:hover,
-.attribution a:active {
-  color: var(--tomato);
-  border-bottom: 0.1rem solid var(--tomato);
-}
-
-.attribution a:focus {
-  outline: 0.2rem dotted var(--tomato);
-}
 
 /*----MEDIA QUERY---*/
 
