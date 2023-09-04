@@ -11,9 +11,61 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">  
   
+  <link rel="stylesheet" href="./src/style.css">
   <title> Newsletter Sign-Up Form with Success Message</title>
 </head>
 <body>
+   <!-- Sign-up form start -->
+<section class="mobile-subscribe-display desktop-subscribe-display" id="subscribe-box">
+  <div class="main-img">
+    <img src="./src/images/illustration-sign-up-mobile (1).svg" alt="">
+  </div>
   
+  <div class="main-body">
+    <h1>Stay updated!</h1>
+    <div class="text-block">
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+      <ul>
+        <li><img src="./src/images/icon-list (1).svg" alt=""><p class="list-item-text">Product discovery and building what matters</p></li>
+        <li><img src="./src/images/icon-list (1).svg" alt=""><p class="list-item-text">Measuring to ensure updates are a success</p></li>
+        <li><img src="./src/images/icon-list (1).svg" alt=""><p class="list-item-text">And much more!</p></li>
+      </ul>
+    </div>
+
+    <div class="subscribe-block">
+      <form>
+        <label for="email">
+          <p>Email address</p>
+          <p id="invalid-email" class="hidden">Valid email required</p>
+        </label>
+        <input type="email" id="email" name="email" placeholder="email@company.com">
+      </form>
+      <button class="subscribe" id="sub-button" form="email" type="submit">Subscribe to monthly newsletter</button>
+    </div>
+  </div>
+</section>
+
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+
+  <section class="mobile-success-display" id="success-message">
+    <img class="success-icon" src="src/images/icon-success (1).svg" alt="">
+    <div class="main-body">
+      <h1>Thanks for subscribing!</h1>
+      <div class="text-block">
+        <p>A confirmation email has been sent to <a class="email-link">ash@loremcompany.com</a>. Please open it and click the button inside to confirm your subscription.</p>
+      </div>
+  
+      <div class="dismiss-button">
+        <button id="dismiss-message">Dismiss message</button>
+      </div>
+    </div>
+  </section>
+  <!-- Success message end -->
+  
+
+  <script src="./src/script.js"></script>
 </body>
 </html>
